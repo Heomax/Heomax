@@ -1,0 +1,25 @@
+<%= form_for @subscription do |f| %>
+  <% if @subscription.errors.count > 0 %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>
+        <%= label_tag @subscription.errors.count %> <%= label_tag 'error have to be fixed' %>
+      </strong>
+      <% for error in @subscription.errors.full_messages %>
+        <div>
+          <%= label_tag error %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= label_tag 'Hashtag Name:' %></div>
+  <div>
+    <%= f.text_field :tag %></div>
+  <div>
+    <%= label_tag 'Email:' %></div>
+  <div>
+    <%= f.email_field :email %></div>
+  <div>
+    <%= f.submit %></div>
+<% end %>

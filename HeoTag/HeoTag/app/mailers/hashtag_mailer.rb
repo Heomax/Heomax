@@ -1,0 +1,2 @@
+class HashtagMailer < ApplicationMailer
+end
