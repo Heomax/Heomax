@@ -83,4 +83,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+
+
+  #mail
+  config.action_mailer.smtp_settings = {
+      address: "smtp.sendgrid.net",
+      port: 587,
+      domain: "heomax.io",
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: "contact",#ENV["GMAIL_USERNAME"],
+      password: "Male2018" #ENV["GMAIL_PASSWORD"]
+  }
 end
