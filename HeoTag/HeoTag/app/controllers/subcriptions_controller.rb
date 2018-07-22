@@ -4,6 +4,9 @@ class SubcriptionsController < ApplicationController
     @subscription = Subcription.new(build_params)
     respond_to do |format|
       if @subscription.save
+
+        HashtagMailer.welcome_email.deliver
+
         format.html { redirect_to subcriptions_index_path}
         format.json { render :index, status: :created, location: subscription }
       else
