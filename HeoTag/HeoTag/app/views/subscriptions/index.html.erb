@@ -1,25 +1,36 @@
-<%= form_for @subscription do |f| %>
-  <% if @subscription.errors.count > 0 %>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>
-        <%= label_tag @subscription.errors.count %> <%= label_tag 'error have to be fixed' %>
-      </strong>
-      <% for error in @subscription.errors.full_messages %>
-        <div>
-          <%= label_tag error %>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>Suscribirse <small></small></h5>
+            </div>
+            <div class="ibox-content">
+                <div>
+                  <%= form_for @subscription do |f| %>
+                    <% if @subscription.errors.count > 0 %>
+                      <div class="alert alert-danger" role="alert">
+                        <strong>
+                          <%= label_tag @subscription.errors.count %> <%= label_tag 'error have to be fixed' %>
+                        </strong>
+                        <% for error in @subscription.errors.full_messages %>
+                          <div>
+                            <%= label_tag error %>
+                          </div>
+                        <% end %>
+                      </div>
+                    <% end %>
+                    <div class="form-group"><%= label_tag 'Hashtag Name:', nil, class: "control-label" %>  <%= f.text_field :tag, class: "form-control" %></div>
+                    <div class="form-group"><%= label_tag 'Email:', nil, class: "control-label" %></div>  <%= f.email_field :email, class: "form-control" %></div>
+                    <div class="hr-line-dashed"></div>
+                    <div>
+                      <%= f.submit 'Crear Suscripcion', class: "btn btn-primary" %>
+                        
+                      </div>
+                  <% end %>
+                </div>
         </div>
-      <% end %>
     </div>
-  <% end %>
+</div>
+</div>
 
-  <div>
-    <%= label_tag 'Hashtag Name:' %></div>
-  <div>
-    <%= f.text_field :tag %></div>
-  <div>
-    <%= label_tag 'Email:' %></div>
-  <div>
-    <%= f.email_field :email %></div>
-  <div>
-    <%= f.submit %></div>
-<% end %>
+
