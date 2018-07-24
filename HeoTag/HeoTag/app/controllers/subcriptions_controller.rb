@@ -5,7 +5,7 @@ class SubcriptionsController < ApplicationController
     respond_to do |format|
       if @subscription.save
 
-        HashtagMailer.send_signup_email(@subscription).deliver
+        HashtagMailer.tag_promotion(@subscription).deliver
 
         format.html { redirect_to subcriptions_index_path}
         format.json { render :index, status: :created, location: subscription }
