@@ -1,24 +1,42 @@
-# README
+#HeoTag
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instalar RVM
 
-Things you may want to cover:
+https://rvm.io/rvm/install
 
-* Ruby version
+para windows si no funciona lo que figura en la pagina usar chocolatey (https://chocolatey.org/)
 
-* System dependencies
+una ves instalado
 
-* Configuration
+hay que crear el gemset que es basicamente la librerias de ruby a usar en la app 
+ 
+en la ruta de la aplicacion ponen en la consola.
 
-* Database creation
+`rvm install 2.4.1`
 
-* Database initialization
+`rvm use 2.4.1@heotag --create` 
+heotag es simbolico se puede poner el nombre que quieran
 
-* How to run the test suite
+bueno eso crea el gemset
 
-* Services (job queues, cache servers, search engines, etc.)
+despues de creado basta con poner para usar ese gemset 
+`rvm use 2.4.1@heotag`
 
-* Deployment instructions
+hecho eso hay que instalar el manejador de paquetes
 
-* ...
+`gem install bunlder`
+
+luego instalar las librerias
+
+`bundle install`
+
+hecho eso hay que crear las bases de datos
+
+`rake db:create`
+
+una ves hecho esto hay que correr las migraciones (que son basicamente las tablas y las modificaciones sobre ellas)
+
+`rake db:migrate`
+
+una ves terminado eso para levantar el server es 
+`rails s` o `rails server`

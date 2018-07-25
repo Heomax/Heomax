@@ -1,13 +1,13 @@
-class SubcriptionsController < ApplicationController
+class SubscriptionsController < ApplicationController
 
   def create
-    @subscription = Subcription.new(build_params)
+    @subscription = Subscription.new(build_params)
     respond_to do |format|
       if @subscription.save
 
-        HashtagMailer.tag_promotion(@subscription).deliver
+        HashtagMailer.tag_promotion(subscription: params[:subscription]).deliver
 
-        format.html { redirect_to subcriptions_index_path}
+        format.html { redirect_to subscriptions_index_path}
         format.json { render :index, status: :created, location: subscription }
       else
         format.html {render 'index'} ## Specify the format in which you are rendering "new" page
@@ -18,13 +18,13 @@ class SubcriptionsController < ApplicationController
 
   end
   def index
-    @subscription = Subcription.new
+    @subscription = Subscription.new
   end
 
   private
 
   def build_params
-    params.require(:subcription).permit(:tag,
+    params.require(:subscription).permit(:tag,
                                         :email)
   end
 end

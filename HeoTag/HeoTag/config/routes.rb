@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'subcriptions/index'
+  get 'subscriptions/index'
   get 'home/index'
 
-  resources :subcriptions
-  root to: "subcriptions#index"
+  resources :subscriptions
+  root to: "subscriptions#index"
 end

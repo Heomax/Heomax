@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180721050558) do
 
-  create_table "subcriptions", force: :cascade do |t|
+  create_table "subscriptions", force: :cascade do |t|
     t.string   "email"
     t.string   "tag"
     t.integer  "quantity"
