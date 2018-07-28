@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +27,12 @@
 
             <!-- Page wrapper -->
             <%= render 'layouts/topnavbar' %>
+
+          <!--Login / Logout alerts and warnings -->
+          <% if notice %> <div class="alert alert-info"> <%= notice %> </div> <% end %>
+
+          <% if alert %> <div class="alert alert-warning"> <%= alert%> </div> <% end %>
+
 
             <!-- Main view  -->
             <%= yield %>
