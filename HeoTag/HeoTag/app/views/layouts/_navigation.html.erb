@@ -3,16 +3,20 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    <img alt="image" class="rounded-circle" src="heo-icon.png" style="height: 48px; width: 48px;">
+                    <img alt="image" class="rounded-circle" src="/heo-icon.png" style="height: 48px; width: 48px;">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
                                 <strong class="font-bold">HeoMax</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                            </span> <span class="text-muted text-xs block">Menu <b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="#">Logout</a></li>
+                        <% if user_signed_in? %>
+                            <li><a href="/users/sign_out">Logout</a></li>
+                        <% else %>
+                            <li><a href="/users/sign_in">Sing in</a></li>
+                        <% end %>
                     </ul>
                 </div>
                 <div class="logo-element">

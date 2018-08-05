@@ -16,6 +16,11 @@
 //= require bootstrap-sprockets
 //= require metisMenu/jquery.metisMenu.js
 //= require pace/pace.min.js
-//= require slimscroll/jquery.slimscroll.min.js
 //= require_tree .
 //= require icheck
+//= require toastr
+//= require jquery.peity
+//= require jquery.slimscroll.min
+//= require inspinia.js
+//= require wow
+
