@@ -15,6 +15,7 @@ Devise.setup do |config|
   # config.parent_controller = 'DeviseController'
 
   Devise::SessionsController.layout "empty"
+  Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "empty" }
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class

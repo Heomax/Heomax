@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :subscriptions
-  root to: "subscriptions#index"
+  root to: "landing#index"
 end
